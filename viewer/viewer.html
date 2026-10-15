@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>商品图片预览 · 电商图片提取</title>
+  <link rel="stylesheet" href="viewer.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <h1 id="pageTitle">商品图片</h1>
+          <p id="pageMeta" class="meta">加载中…</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button type="button" id="btnSelectAll" class="btn ghost">全选</button>
+        <button type="button" id="btnSelectNone" class="btn ghost">取消全选</button>
+        <button type="button" id="btnDownload" class="btn primary" disabled>
+          下载选中 (PNG)
+        </button>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <label class="check-count">
+        已选 <strong id="selectedCount">0</strong> / <span id="totalCount">0</span>
+      </label>
+      <div id="statusText" class="status" role="status"></div>
+    </section>
+
+    <main id="gallery" class="gallery" aria-live="polite"></main>
+
+    <div id="empty" class="empty hidden">
+      <p>没有可展示的图片</p>
+      <p class="hint">请回到商品详情页点击右下角「获取图片」</p>
+    </div>
+  </div>
+
+  <div id="progressMask" class="progress-mask hidden" aria-hidden="true">
+    <div class="progress-card">
+      <div class="spinner" aria-hidden="true"></div>
+      <p id="progressText">正在下载…</p>
+    </div>
+  </div>
+
+  <script type="module" src="viewer.js"></script>
+</body>
+</html>
